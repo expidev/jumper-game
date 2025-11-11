@@ -1,5 +1,4 @@
 class TerminalService:
-    # Added by Hector Olivares Tapia as result of cse210 assignment # 
     """A service that handles terminal operations.
     
     The responsibility of a TerminalService is to provide input and output operations for the 
@@ -27,7 +26,4 @@ class TerminalService:
             self (TerminalService): An instance of TerminalService.
             text (string): The text to display.
         """
-        print(f'\n\033[1;37;41m {text} \033[0m\n')
-# Yves I also changed these methods to private because i made some
-# modification parachite if not the game would not be funtional.
-# these changes were made by Yves          
+        print(f'{text}\n')       

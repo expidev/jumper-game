@@ -1,35 +1,23 @@
-# cse210-03
-# #Jumper description:
-This jumper is a game when you have the obligation to keep your parachute up. Are you able to make it?
-Or are you a perseverant person to strive? You are needed to guess the hidden word by guessing a letter one at a time.
-If don't guess it correctly, you will lose your parachute a little by little, if you guess it correctly the parachute will be built up.
-Remember that if you repeat your previous right guess, the parachute won't change.
-But if you continue to repeat your wrong guess, you will lose again.
+
+# Description:
+
+The jumper is a game where you guess a hidden word by suggesting letters. You type the possible letters one at a time.
+
+If you guess a letter that is in the word, all occurrences of that letter are revealed in the word.
+
+If you guess a letter that is not in the word, a part of your parachute is cut away. If you lose all parts of your parachute, you lose the game.
+
 
 ## Getting Started
----
-Make sure you have Python 3.8.0 or newer installed and running on your machine. Open a terminal and 
-browse to the project's root folder. Start the program by running the following command.
-```
+
+Make sure that you have Python 3 installed on your computer. You can download it from [python.org](https://www.python.org/downloads/).
+
+Rum the program with the command below
+
+```bash
 python jumper
 ```
-You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the 
-project folder. Select the main module inside the dice folder and click the "run" button.
 
-## Project Structure
----
-The project files and folders are organized as follows:
-```
-root                    (project root folder)
-+-- jumper                (source code for game)
-  +-- game              (specific classes)
-  +-- __main__.py       (program entry point)
-+-- README.md           (general info)
-```
-
-## Required Technologies
----
-* Python 3.8.0 or higher
 
 ## Authors
 ---

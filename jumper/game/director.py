@@ -1,15 +1,12 @@
 from game.parachute import Parachute
 from game.word import Word
-# Changes added by Hector Olivares Tapia as result of cse210 assignment #
 from game.terminal_service import TerminalService
 
-# Hector Olivares Tapia reviewed today at noon
 
 class Director:
     """This object has the main behavior to start the game and process the main code"""
 
     def __init__(self):
-        #constructors, some come from the Word and the Parachute object
         self._parachute = Parachute()
         self._word = Word ()       
         self._random_word = self._word._initial_word 
@@ -17,11 +14,9 @@ class Director:
         self._user_guess = ""
         self._is_ending = True
         self.check = 8 
-        # Changes added by Hector Olivares Tapia as result of cse210 assignment. #
         self._terminal_service = TerminalService()
         
     def _start_game(self):
-        #the order on how the game will be displayed
         self._blank_word = self._word._length()
         self._word._printlist(self._blank_word)
         self._parachute._show(self.check)
@@ -32,13 +27,10 @@ class Director:
     def _process(self):
         """to process the input(the user guess) into the output (the parachute, displaying the corrected letters)"""
 
-        #get the input
-        # Changes added by Hector Olivares Tapia as result of cse210 assignment. #
-        ask_letter = '\033[1;30;43m Guess a letter [a-z]: \033[0m' 
-        self._user_guess = self._terminal_service._read_text(ask_letter) 
 
-        #Process the input into the output
-        #Replacing the dash in the blank word which is the length of the random word with the corrected letters
+        ask_letter = 'Guess a letter [a-z]: '
+        self._user_guess = self._terminal_service._read_text(ask_letter)
+
         if self._user_guess in self._random_word and f" {self._user_guess}" not in self._blank_word:
             random_word_indexes = []
             index_start = -1
@@ -76,9 +68,7 @@ class Director:
             self._parachute._show(self.check-1)
             self.check-=1
 
-        #the game is over when the self.check ==3 or all the dashes in the blank word are replaced
         if self.check == 3 or " _" not in self._blank_word:
             self._is_ending = False
-            # Changes added by Hector Olivares Tapia as result of cse210 assignment. #
             end_game = ' Game Over ¨.¨ '
             self._terminal_service._write_text(end_game)    
